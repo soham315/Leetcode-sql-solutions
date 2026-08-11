@@ -6,7 +6,5 @@ set M = N-1;
       # Write your MySQL query statement below.
       Select distinct salary from Employee 
       order by salary desc limit 1 offset M
-
-
   );
 END
