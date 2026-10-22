@@ -2,7 +2,7 @@
 With CTE as
 (select d.name as Department,e.name as Employee , e.salary as salary,
 dense_rank() over (partition by d.name order by salary desc) as rnk
-from employee e inner join department d
+from employee e left join department d
 on e.departmentId = d.id)
 
 select Department,Employee,salary from CTE where rnk<=3
