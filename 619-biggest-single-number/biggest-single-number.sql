@@ -1,10 +1,7 @@
-with cte as(select num , count(num)
-from MyNumbers
+# Write your MySQL query statement below
+with cte as(select num
+from MyNumbers 
 group by num
-having count(num) = 1)
+having count(*)=1)
 
-select 
-case when count(*) > 0 then max(num)
-else null
-end as num
-from cte
+select max(num) as num from cte
